@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="Parcial.Xamarin.Views.DomiciliosPage"
+             Title="Domicilios">
+
+    <StackLayout>
+        <ListView x:Name="lsvProductos" HasUnevenRows="True">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition />
+                                <ColumnDefinition />
+                                <ColumnDefinition />
+                            </Grid.ColumnDefinitions>
+                            <Grid.RowDefinitions>
+                                <RowDefinition />
+                                <RowDefinition />
+                            </Grid.RowDefinitions>
+
+                            <Image Source="{Binding Imagen}" Grid.Column="0" Grid.RowSpan="2" WidthRequest="50" HeightRequest="100"/>
+
+                            <Label Text="{Binding Nombre}" Grid.Column="1" Grid.Row="0" />
+                            <Label Text="{Binding Precio}" Grid.Column="1" Grid.Row="1" />
+
+                            <Entry Grid.Column="2" Grid.RowSpan="2" />
+                        </Grid>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+        <Button Text="Ver resumen" />
+    </StackLayout>
+</ContentPage>
